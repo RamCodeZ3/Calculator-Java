@@ -1,21 +1,30 @@
 public class Calculator {
-    public void add(int a, int b) {
-        int result = a + b;
-        System.out.println(result);
+    public void add(double a, double b) {
+        double result = a + b;
+        if (result == (double) ((int) result)){
+            System.out.println((int)result);
+        } else System.out.println(result);
+
     }
-    public void subtraction(int a, int b) {
-        int result = a - b;
-        System.out.println(result);
+    public void subtraction(double a, double b) {
+        double result = a - b;
+        if (result == (double) ((int) result)){
+            System.out.println((int)result);
+        } else System.out.println(result);
     }
 
-    public void multiplication(int a, int b) {
-        int result = a * b;
-        System.out.println(result);
+    public void multiplication(double a, double b) {
+        double result = a * b;
+        if (result == (double) ((int) result)){
+            System.out.println((int)result);
+        } else System.out.println(result);
     }
 
-    public void division(int a, int b) {
-        int result = a / b;
-        System.out.println(result);
+    public void division(double a, double b) {
+        double result = a / b;
+        if (result == (double) ((int) result)){
+            System.out.println((int)result);
+        } else System.out.println(result);
     }
 
 }
