@@ -14,7 +14,7 @@ public class Calculator {
     }
 
     public void division(int a, int b) {
-        int result = a + b;
+        int result = a / b;
         System.out.println(result);
     }
 
