@@ -6,44 +6,30 @@ public class Main {
         Scanner input = new Scanner(System.in);
         boolean activate = true;
 
-        System.out.print("Calculadora basica que realiza +,-,*,/ de dos numeros:\n");
+        System.out.print("Calculadora basica que realiza +,-,*,/,% de dos numeros:\n");
         System.out.println("Ejecuta /e para salir de la calculadora.");
 
         try{
             while(activate){
                 String text = input.nextLine();
-                double number1 = 0;
-                double number2 = 0;
+                String operador = "";
+                if(text.contains("+")) operador = "+";
+                else if(text.contains("-")) operador = "-";
+                else if(text.contains("*")) operador = "*";
+                else if(text.contains("/")) operador = "/";
+                else if(text.contains("%")) operador = "%";
+                double number1 = Double.parseDouble(text.substring(0,text.indexOf(operador)));
+                double number2 = Double.parseDouble(text.substring(text.indexOf(operador) + 1));;
 
-                if(text.contains("+")){
-                    number1 = Double.parseDouble(text.substring(0,text.indexOf("+")));
-                    number2 = Double.parseDouble(text.substring(text.indexOf("+") + 1));
-
-                    cal.add(number1, number2);
-                }
-                else if (text.contains("-")){
-                    number1 = Double.parseDouble(text.substring(0,text.indexOf("-")));
-                    number2 = Double.parseDouble(text.substring(text.indexOf("-") + 1));
-
-                    cal.subtraction(number1, number2);
-                }
-
-                else if (text.contains("*")){
-                    number1 = Double.parseDouble(text.substring(0,text.indexOf("*")));
-                    number2 = Double.parseDouble(text.substring(text.indexOf("*") + 1));
-
-                    cal.multiplication(number1, number2);
+                switch (operador) {
+                    case "+": cal.add(number1, number2); break;
+                    case "-": cal.subtraction(number1, number2); break;
+                    case "*": cal.multiplication(number1, number2); break;
+                    case "/": cal.division(number1, number2); break;
+                    case "%": cal.percentage(number1, number2); break;
                 }
 
-                else if (text.contains("/")){
-                    number1 = Double.parseDouble(text.substring(0,text.indexOf("/")));
-                    number2 = Double.parseDouble(text.substring(text.indexOf("/") + 1));
-                    cal.division(number1, number2);
-                }
-
-                else if (text.equals("/e")){
-                    activate = false;
-                }
+                if(text.equals("/e")) activate = false;
             }
         }
         catch (Exception e){

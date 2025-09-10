@@ -27,4 +27,11 @@ public class Calculator {
         } else System.out.println(result);
     }
 
+    public void percentage(double a, double b) {
+        double result = a % b;
+        if (result == (double) ((int) result)){
+            System.out.println((int)result);
+        } else System.out.println(result);
+    }
+
 }
