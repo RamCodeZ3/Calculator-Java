@@ -19,11 +19,7 @@ public class Main {
                 }
 
                 if(text.contains("(")){
-                    String text2 = text.replaceAll("\\(.*?\\)", "");
-                    double num1 = Double.parseDouble(text2);
-                    double num2 = Double.parseDouble(cal.encapsulatedOperations(text));
-                    cal.multiplication(num1,num2);
-                    break;
+                    text = text.replaceAll("\\(.*?\\)", "*" + cal.encapsulatedOperations(text));
                 }
 
                 String operador = detector.operator(text);
